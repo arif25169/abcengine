@@ -13,7 +13,7 @@ export interface AbcModel {
 }
 
 const abcs: AbcModel = {
-  stepone: {projectName: "Tes", projectDescription: "Descri", client: "Arif", contractor: "Starman"},
+  stepone: {projectName: "", projectDescription: "", client: "", contractor: ""},
   setStepOne: action((state, payload:any) => {
     state.stepone = payload;
 }),

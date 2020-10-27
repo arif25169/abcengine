@@ -3,10 +3,11 @@ import { Helmet } from "react-helmet";
 import { Form, Input, Button } from "antd";
 import { useHistory } from "react-router-dom";
 import { useStoreActions } from "../store";
+import { ArrowRightOutlined } from "@ant-design/icons";
 
 const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
+  labelCol: { span: 6 },
+  wrapperCol: { span: 18 },
 };
 
 export default function StepOne() {
@@ -48,7 +49,7 @@ export default function StepOne() {
             { required: true, message: "Please write project description" },
             {
               max: 255,
-              message: "Project description cannot be more than 50 characters",
+              message: "Project description cannot be more than 255 characters",
             },
           ]}
         >
@@ -82,9 +83,9 @@ export default function StepOne() {
         >
           <Input />
         </Form.Item>
-        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+        <Form.Item style={{float:"right"}}>
           <Button type="primary" htmlType="submit">
-            Submit
+          <ArrowRightOutlined /> Next
           </Button>
         </Form.Item>
       </Form>
