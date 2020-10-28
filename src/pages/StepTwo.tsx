@@ -3,11 +3,16 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useStoreState } from "../store";
 import { Button, Form, Input, InputNumber, Table, Typography } from "antd";
-import { LineChartOutlined, UploadOutlined } from "@ant-design/icons";
+import {
+  ArrowLeftOutlined,
+  LineChartOutlined,
+  UploadOutlined,
+} from "@ant-design/icons";
 import ReactFileReader from "react-file-reader";
 import { minmax } from "../components/functions";
 import PdfFile from "../components/PdfFile";
 import Chart from "../components/Chart";
+import { Link } from "react-router-dom";
 
 declare module "react" {
   interface HTMLAttributes<T> {
@@ -134,6 +139,14 @@ export default function StepTwo() {
       </Helmet>
       <div style={{ margin: 10 }}>
         <div style={{ marginBottom: 35 }}>
+          <Link to="/" style={{ marginBottom: 10 }}>
+            {" "}
+            <Button type="primary">
+              {" "}
+              <ArrowLeftOutlined />
+              Go Back
+            </Button>{" "}
+          </Link>
           <div style={{ display: "flex", margin: 10 }}>
             <span style={{ width: "20%" }}>Project Name</span>
             <Input value={stepone?.projectName} disabled />
@@ -187,7 +200,9 @@ export default function StepTwo() {
                 style={{ float: "left" }}
                 type="primary"
                 onClick={() => showChartFunc()}
-              > <LineChartOutlined />
+              >
+                {" "}
+                <LineChartOutlined />
                 {shwChart ? "Hide Chart" : "Show Chart"}
               </Button>
             )}
@@ -209,16 +224,16 @@ export default function StepTwo() {
                 <PdfFile pdfValue={finalItems} />
               </div>
             </div>
-            <br/>
+            <br />
           </>
         )}
         {shwChart ? (
           <>
-          <Title level={3}>Result Chart: </Title>
-          <Chart
-            chartValueLabel={chartValueLabel}
-            chartValueData={chartValueData}
-          />
+            <Title level={3}>Result Chart: </Title>
+            <Chart
+              chartValueLabel={chartValueLabel}
+              chartValueData={chartValueData}
+            />
           </>
         ) : null}
       </div>

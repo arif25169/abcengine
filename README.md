@@ -1,3 +1,3 @@
 First Submit
 
- <a id="raw-url" href="https://raw.githubusercontent.com/github-username/project/master/filename">Download CSV File</a>
+ <a id="raw-url" href="https://riffiles.netlify.app/input_values.csv">Download CSV File</a> for testing
