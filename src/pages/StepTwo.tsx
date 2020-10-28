@@ -79,7 +79,7 @@ export default function StepTwo() {
       minZ: minMaxValue?.minZ,
       maxZ: minMaxValue?.maxZ,
     });
-  }, [minMaxValue]);
+  }, [form, minMaxValue]);
 
   const onFinish = (values: any) => {
     values.minX = values.minX === undefined ? 0 : values.minX;
